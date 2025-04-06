@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/news_detection?serverTimezone=Asia/Shanghai&characterEncoding=utf-8
+    username: root
+    password: fu20041127
+  mvc:
+    log-request-details: true
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml
+logging:
+  level:
+    root: info
+    com.fc: debug
+    org.springframework.web: debug
+    org.springframework.web.servlet: trace
+    com.fc.mapper: debug
+    org.apache.tomcat: debug
+    org.apache.catalina: debug
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+# application.yml
+
